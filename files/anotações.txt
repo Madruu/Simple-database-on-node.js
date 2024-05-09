@@ -1,0 +1,57 @@
+
+ESTUDO DA PARTE DE NPM PACKAGE MANAGER MODULES
+Estou guardando "type": "module" aqui apenas caso seja necessário
+Instalar 'uuid', pois essa depencencia permite a criação de id's that are different from each entries
+Importando uma versão específica do uuid (no caso, v4)// Esta parte vai gerar um id aleatório no terminal
+
+ONDE PAREI NO DIA 10/04/2024: https://www.youtube.com/watch?v=oGO_-DWTmKA&list=PL0Zuz27SZ-6PFkIxaJ6Xx_X46avTM1aYw&index=3
+=========================================================================================================================
+COMEÇANDO DIA 15/04/2024 O VIDEO: https://www.youtube.com/watch?v=2vaTy4dkbJM&list=PL0Zuz27SZ-6PFkIxaJ6Xx_X46avTM1aYw&index=4
+Notes:
+    Criar uma função que crie um log para um servidor
+================================================================================================================================
+Conditional ternary explanation with the example of filePath:
+    if the contentType is text/html and the url request is just '/', then the value is gonna be the following statement with path.join(). But if thats not the case
+    then we look at the next condition that says that if its an html file and the last character of the request url is a '/' (we represent that as req.url.slice(-1) === '/')
+    so this comes in not only for the directory, but for the subdirectory as well, so then we have to specify the requested url too. And if not, we just check if the 
+    contentType is html. if so, then we just check whatever was requested in the views folder. and if not, then we just join the requested url 
+    (doesnt need to be necessarily at the views path).
+Now for the final check in the server: 
+    we are going to use an if statement: if there isnt no extenstion (it was probably a '/' and didnt have any extenstion) and the last character also wasnt a '/'
+    (just like before, to check that we use req.url.slice(-1)), then we add the '.html' to the filePath, so even if there is not extension, we still serve the html if
+    we didnt type at the request.
+
+The fs.existsSync() method is used to synchronously check if a file already exists in the given path or not. 
+It returns a boolean value which indicates the presence of a file.
+
+Now messing up with the fileExists using a path that doesnt exists: 
+    it is created in the console even though it didnt exist, it was added to the filePath, and thats what we 
+    are going to use when coming to the area that doesnt know if returns a 404 or 301 error (use switch statement)
+    but when we use the switch statement, we need to use the base of the file aswell. see more on line 92 of 'server.js'
+    BUT, the default would be the 404 error message, but if we want to be efficient, we have to use a function to serve the 404 error or to serve the file if it exists
+    (develop the function after the PORT but before the server).
+
+Breaking down the function to serve the file:
+    usually called serveFIle(). in this function (async function), we need to read the filePath, also need the contentType thats going to be sent and we need a response object (res) to send the
+    response.
+
+NOW WORKING WITH EXPRESS TOO:
+    We can save the server we created using only node.js as "oladServer.js" just to have it in case we want to study. But we are going to basically create another entirely new
+    server.
+    On the new server, we are going to use express to make all the features on the server. After that we are going to define app to store the express module.
+    CONTINUE FROM THE VIDEO "https://www.youtube.com/watch?v=jivyItmsu18&list=PL0Zuz27SZ-6PFkIxaJ6Xx_X46avTM1aYw&index=6" at minute 10:26
+    WHY USE THE next() FUNCTION ON AN APPLICATION WITH NODE AND EXPRESS? because If the current middleware function does not end the 
+    request-response cycle, it must call next() to pass control to the next middleware function
+
+NOW STARTING A NEW VIDEO ABOUT MIDDLEWARES:
+    Besides everything thats commented on the file, lets create a custom middleware logger
+
+
+
+SEMPRE LEMBRAR DE USAR A PORRA DO PATH.JOIN NESSE CARALHO PORRA BUCETA INFERNO CU CARALGHO PORRA IUHJEBWOLPÇVUHAQ\ERB  GKOLJHAWSERBFGRFL.Ç;ON
+
+
+
+
+
+AGORA DESAFIO PRESENTE NO VIDEO 14TUT NO MINUTO 20:19
