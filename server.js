@@ -6,7 +6,7 @@ dotenv.config();
 import path from 'path';
 import express from 'express';
 
-//importing dirname from dirname because why not right my pc doesnt fucking run the dirname methods if i dont import them
+//importing dirname from dirname
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
